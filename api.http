@@ -1,0 +1,38 @@
+@host=http://localhost:3000
+
+###
+# GET /reservations
+GET {{host}}/reservations HTTP/1.1
+
+###
+# GET /reservations/{id}
+GET {{host}}/reservations/643ad1e592579fa9a4362a7c HTTP/1.1
+
+
+###
+# POST /reservations
+POST {{host}}/reservations HTTP/1.1
+Content-Type: application/json
+
+{
+    "startDate": "02/23/2023",
+    "endDate": "02/25/2023",
+    "placeId": "12344",
+    "invoiceId": "3453"
+}
+
+###
+# PATCH /reservations/{id}
+PATCH  {{host}}/reservations/643ad1e592579fa9a4362a7c HTTP/1.1
+Content-Type: application/json
+
+{
+    "startDate": "01/25/2023"
+}
+
+
+###
+# DELETE /reservations/{id}
+DELETE  {{host}}/reservations/643ad17592579fa9a4362a77 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
